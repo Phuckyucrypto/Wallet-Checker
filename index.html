@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffffff; /* Light grey background */
+            background-color: rgb(22, 3, 65); /* Light grey background */
             text-align: center;
             color: white;
         }
@@ -77,7 +77,7 @@
                 .then(data => {
                     const wallets = data.values.map(row => row[0].toLowerCase());
                     const isListed = wallets.includes(walletAddress);
-                    document.getElementById('result').textContent = isListed ? 'Your wallet is listed.' : 'Your wallet is not listed.';
+                    document.getElementById('result').textContent = isListed ? 'You are eligible for OG Phase' : 'You are eligible for FCFS phase';
                 })
                 .catch(error => console.error('Error:', error));
         }
