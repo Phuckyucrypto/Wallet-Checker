@@ -70,16 +70,24 @@
     <script>
         function checkWallet() {
             const walletAddress = document.getElementById('walletInput').value.trim().toLowerCase();
-            const apiURL = 'https://sheets.googleapis.com/v4/spreadsheets/1GDlBlVvUvbBF7hvcKX5mTRjwKmAP9TetUCvGlF9d4QQ/values/Sheet1!A1:A1000?key=AIzaSyCHpKMJVxVKaD5OHnXdl539Xc6QO2nlcRg';
-
+            const apiURL = 'https://sheets.googleapis.com/v4/spreadsheets/1IoFwDrQTsNOSEbOI4cu4wpg-oQzYM8P6I17lP5ujkkQ/values/Sheet1!A2:B1000?key=AIzaSyCHpKMJVxVKaD5OHnXdl539Xc6QO2nlcRg';
             fetch(apiURL)
                 .then(response => response.json())
                 .then(data => {
-                    const wallets = data.values.map(row => row[0].toLowerCase());
-                    const isListed = wallets.includes(walletAddress);
-                    document.getElementById('result').textContent = isListed ? 'You are eligible for OG Phase' : 'You are eligible for FCFS phase';
+                    const columnA = data.values.map(row => row[0] ? row[0].toLowerCase() : '');
+                    const columnB = data.values.map(row => row[1] ? row[1].toLowerCase() : '');
+                    let message = 'You are not on OG/WL. You can mint public phase.';
+                    if (columnA.includes(walletAddress)) {
+                        message = 'You are eligible for OG Phase.';
+                    } else if (columnB.includes(walletAddress)) {
+                        message = 'You are eligible for FCFS Phase.';
+                    }
+                    document.getElementById('result').textContent = message;
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('result').textContent = 'Error checking wallet. Please try again.';
+                });
         }
     </script>
 </body>
