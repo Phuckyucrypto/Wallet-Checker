@@ -1,0 +1,6 @@
+SHEET_ID=1234567890987654321
+API_KEY=8SDJFKL8OSLDFJSAD;FLKJ;LKJSDFASDFJLK
+
+- This is an example of how your .env file should look.
+- Change name of file to .env for it to work properly in local enviorment.
+- .env should never be uploaded to hosting or server store variables securely depending on platform you are goign to use. 

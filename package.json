@@ -1,0 +1,15 @@
+{
+  "name": "simple-wallet-check-",
+  "version": "1.0.0",
+  "description": "## Introduction The Wallet Checker Tool is a simple web application designed to verify if an Ethereum wallet address is listed in a predefined Google Sheet. This tool checks for eligibility in different phases of a project based on the wallet's presence in specific columns of the sheet. It helps in managing early access phases like OG and FCFS for crypto projects.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
