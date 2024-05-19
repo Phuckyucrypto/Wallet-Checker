@@ -47,7 +47,7 @@ To contribute:
 This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
-If you have any questions or want to reach out for collaboration, please contact me at [your-email@example.com].
+If you have any questions or want to reach out for collaboration, please contact me at [phuckyucrypto@gmail.com].
 
 ## Acknowledgments
 - Thanks to everyone who has contributed to making this tool better!
